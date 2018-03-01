@@ -2,7 +2,7 @@
 
 var GoogleMapsManager = {
   apiKey: 'AIzaSyAvbnyxXc2Hmuntiy9BALDvRkYP1Czaxvg',
-  center: {lat: 42.3862173, lng: -71.113683},
+  center: {lat: 41.4806, lng: 2.3148},
   zoom: 5,
   minZoom: 3,
   map: {},
@@ -32,8 +32,8 @@ var GoogleMapsManager = {
           lng: position.coords.longitude
         };
 
-        //GoogleMapsManager.locationInfoWindow.setPosition(pos);
-        //GoogleMapsManager.locationInfoWindow.setContent('You are here');
+        GoogleMapsManager.locationInfoWindow.setPosition(pos);
+        GoogleMapsManager.locationInfoWindow.setContent('You are here');
         GoogleMapsManager.map.setCenter(pos);
       }, function() {
         //GoogleMapsManager.handleLocationError(true, GoogleMapsManager.locationInfoWindow, GoogleMapsManager.map.getCenter());
