@@ -71,9 +71,18 @@ var GoogleMapsManager = {
       var numOfPosts = Object.keys(locationData.posts).length;
       console.log(locationData);
 
-      GoogleMapsManager.markerInfoWindow.setContent('<h3 class="markerTitle">' + locationData.name + '</h3>' +
-                                                    '<h5 class="markerCount">' + numOfPosts + ' picture(s) </h5>');
+      //MARKER
+      GoogleMapsManager.markerInfoWindow.setContent('<h6 class="markerTitle">' + locationData.name + '</h6>' +
+                                                    '<h8 class="markerCount">' + numOfPosts + ' picture(s) </h8>');
       GoogleMapsManager.markerInfoWindow.open(this.map, marker);
+
+      //WEBSITE
+      $( card.jqueryClassFormat ).empty();
+      $( locationData.posts ).each(function (index, value) {
+        var newCard = card.createCard(value[Object.keys(value)]);
+        $( card.jqueryClassFormat ).append(newCard);
+        $('.materialboxed').materialbox();
+      })
     });
   },
 

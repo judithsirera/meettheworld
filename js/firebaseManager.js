@@ -23,8 +23,9 @@ var firebaseManager = {
       $( Object.keys(snapshot.val()) ).each(function (index, value) {
         var coord = snapshot.val()[value].coord;
         var id = value;
-
-        GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
+        if (snapshot.val()[value].posts && Object.keys(snapshot.val()[value].posts).length > 0) {
+            GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
+        }
       })
     });
   }
