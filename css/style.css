@@ -1,7 +1,7 @@
 /* MAP */
 
 #map {
-  height: 70%;
+  height: 60%;
   width: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
@@ -11,10 +11,44 @@ html, body {
   padding: 0;
 }
 
+.center {
+  margin: auto;
+  width: 80%;
+}
+
+.header {
+  width: 100%;
+}
+
+.title-box {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-top: 0.2em;
+  margin-left: 25%;
+  border-radius: 0.3em;
+  padding: 0.2em;
+  position: absolute;
+  z-index: 1000;
+}
+
+.h5-without-margins {
+  margin: 0.2em;
+}
+
+.title-span {
+  font-size: small;
+}
+
 .markerTitle {
   text-align: center;
 }
 
 .displayImages {
   margin-top: 1em;
+}
+
+.noPlaceSelected {
+  margin-top: 5em;
+  text-transform: uppercase;
+  color: #C0C0C0;
 }

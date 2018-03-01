@@ -44,7 +44,9 @@ var GoogleMapsManager = {
   initMap: function () {
     this.map = new google.maps.Map(document.getElementById('map'), {
       zoom: this.zoom,
-      center: this.center
+      center: this.center,
+      fullscreenControl: false,
+      streetViewControl: false
     });
   },
 
