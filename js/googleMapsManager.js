@@ -6,6 +6,7 @@ var GoogleMapsManager = {
   zoom: 5,
   map: {},
   markers: [],
+  markerSelected: {},
   markerInfoWindow: {},
   locationInfoWindow: {},
 
@@ -46,7 +47,8 @@ var GoogleMapsManager = {
       zoom: this.zoom,
       center: this.center,
       fullscreenControl: false,
-      streetViewControl: false
+      streetViewControl: false,
+      minZoom: 2
     });
   },
 
@@ -61,29 +63,42 @@ var GoogleMapsManager = {
     this.markers.push(marker);
   },
 
-  createMarkerClusterer: function (markers) {
-    var markerCluster = new MarkerClusterer(this.map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  deleteSelectedMarker: function () {
+    this.markerSelected.setMap(null);
+    this.markerSelected = {};
+  },
+
+  updateMarkerClusterer: function () {
+    var markerCluster = new MarkerClusterer(this.map, this.markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
   },
 
   markerClickListener: function (marker) {
     marker.addListener('click', function() {
+      GoogleMapsManager.markerSelected = marker;
 
       var locationData = data[marker.getTitle()];
       var numOfPosts = Object.keys(locationData.posts).length;
 
       //MARKER
-      GoogleMapsManager.markerInfoWindow.setContent('<h6 class="markerTitle">' + locationData.name + '</h6>' +
-                                                    '<h8 class="markerCount">' + numOfPosts + ' picture(s) </h8>');
+      GoogleMapsManager.setMarkerInfoWindowContent(locationData.name, numOfPosts)
       GoogleMapsManager.markerInfoWindow.open(this.map, marker);
 
       //WEBSITE
       $( card.jqueryClassFormat ).empty();
       $( locationData.posts ).each(function (index, value) {
-        var newCard = card.createCard(value[Object.keys(value)]);
+        var newCard = card.createCard(Object.keys(value)[0], value[Object.keys(value)]);
         $( card.jqueryClassFormat ).append(newCard);
         $('.materialboxed').materialbox();
       })
+
+      $( card.jqueryDeleteBtnClassFormat ).click(card.deleteButtonHandler);
     });
+  },
+
+  setMarkerInfoWindowContent: function(name, numOfPosts) {
+    this.markerInfoWindow.setContent('<h6 class="markerTitle">' + name + '</h6>' +
+                                    '<h8 class="markerCount">' + numOfPosts + ' picture(s) </h8>');
+
   },
 
   findUserLocationErrorHandler: function (browserHasGeolocation, pos) {
@@ -91,5 +106,5 @@ var GoogleMapsManager = {
     this.locationInfoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
-  },
+  }
 }

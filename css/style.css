@@ -52,3 +52,16 @@ html, body {
   text-transform: uppercase;
   color: #C0C0C0;
 }
+
+.card .card-delete:hover {
+  cursor: pointer;
+}
+.card .card-delete {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  padding: 24px;
+
+}

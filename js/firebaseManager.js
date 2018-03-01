@@ -27,6 +27,16 @@ var firebaseManager = {
             GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
         }
       })
+      GoogleMapsManager.updateMarkerClusterer();
     });
+  },
+
+  deletePost: function(locationID, postID) {
+    this.database.ref('users').child('jsirera').child(locationID).child('posts').child(postID).remove();
+    const index = GoogleMapsManager.markers.indexOf(GoogleMapsManager.markerSelected);
+    if (index !== -1) {
+        GoogleMapsManager.markers.splice(index, 1);
+    }
+    console.log(data);
   }
 }
