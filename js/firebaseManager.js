@@ -19,11 +19,12 @@ var firebaseManager = {
 
   getData: function () {
     return firebase.database().ref('users').child('jsirera').once('value').then(function(snapshot) {
+      data = snapshot.val();
       $( Object.keys(snapshot.val()) ).each(function (index, value) {
         var coord = snapshot.val()[value].coord;
-        var name = snapshot.val()[value].name;
+        var id = value;
 
-        GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, name);
+        GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
       })
     });
   }

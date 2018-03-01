@@ -1,6 +1,8 @@
 
+var data = {};
 
-firebaseManager.init();
 $( document ).ready(function () {
   console.log("ready!");
+
+  firebaseManager.init();
 });
