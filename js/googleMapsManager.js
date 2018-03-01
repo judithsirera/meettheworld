@@ -4,6 +4,7 @@ var GoogleMapsManager = {
   apiKey: 'AIzaSyAvbnyxXc2Hmuntiy9BALDvRkYP1Czaxvg',
   center: {lat: 42.3862173, lng: -71.113683},
   zoom: 5,
+  minZoom: 3,
   map: {},
   markers: [],
   markerSelected: {},
@@ -49,7 +50,7 @@ var GoogleMapsManager = {
       center: this.center,
       fullscreenControl: false,
       streetViewControl: false,
-      minZoom: 2
+      minZoom: this.minZoom
     });
   },
 

@@ -18,7 +18,7 @@ var firebaseManager = {
   },
 
   getData: function () {
-    return firebase.database().ref('users').child('jsirera').once('value').then(function(snapshot) {
+    return firebase.database().ref('users').child(instagramManager.username).once('value').then(function(snapshot) {
       data = snapshot.val();
       $( Object.keys(snapshot.val()) ).each(function (index, value) {
         var coord = snapshot.val()[value].coord;
@@ -32,6 +32,6 @@ var firebaseManager = {
   },
 
   deletePost: function(locationID, postID) {
-    this.database.ref('users').child('jsirera').child(locationID).child('posts').child(postID).remove();
+    this.database.ref('users').child(instagramManager.username).child(locationID).child('posts').child(postID).remove();
   }
 }
