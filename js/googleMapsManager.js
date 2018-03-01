@@ -8,6 +8,7 @@ var GoogleMapsManager = {
   markers: [],
   markerSelected: {},
   markerInfoWindow: {},
+  markerClusterer: {},
   locationInfoWindow: {},
 
   init: function () {
@@ -34,11 +35,11 @@ var GoogleMapsManager = {
         //GoogleMapsManager.locationInfoWindow.setContent('You are here');
         GoogleMapsManager.map.setCenter(pos);
       }, function() {
-        handleLocationError(true, locationInfoWindow, GoogleMapsManager.map.getCenter());
+        GoogleMapsManager.handleLocationError(true, locationInfoWindow, GoogleMapsManager.map.getCenter());
       });
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, locationInfoWindow, GoogleMapsManager.map.getCenter());
+      GoogleMapsManager.handleLocationError(false, locationInfoWindow, GoogleMapsManager.map.getCenter());
     }
   },
 
@@ -64,12 +65,23 @@ var GoogleMapsManager = {
   },
 
   deleteSelectedMarker: function () {
+    const index = GoogleMapsManager.markers.indexOf(GoogleMapsManager.markerSelected);
+    if (index !== -1) {
+        GoogleMapsManager.markers.splice(index, 1);
+    }
     this.markerSelected.setMap(null);
     this.markerSelected = {};
+
+    //this.createMarkerClusterer();
+
+  },
+
+  createMarkerClusterer: function () {
+    this.markerCluster = new MarkerClusterer(this.map, this.markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
   },
 
   updateMarkerClusterer: function () {
-    var markerCluster = new MarkerClusterer(this.map, this.markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+    this.markerClusterer.setMarkers(this.markers);
   },
 
   markerClickListener: function (marker) {
