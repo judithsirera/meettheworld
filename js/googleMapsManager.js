@@ -36,11 +36,11 @@ var GoogleMapsManager = {
         //GoogleMapsManager.locationInfoWindow.setContent('You are here');
         GoogleMapsManager.map.setCenter(pos);
       }, function() {
-        GoogleMapsManager.handleLocationError(true, locationInfoWindow, GoogleMapsManager.map.getCenter());
+        //GoogleMapsManager.handleLocationError(true, GoogleMapsManager.locationInfoWindow, GoogleMapsManager.map.getCenter());
       });
     } else {
       // Browser doesn't support Geolocation
-      GoogleMapsManager.handleLocationError(false, locationInfoWindow, GoogleMapsManager.map.getCenter());
+      //GoogleMapsManager.handleLocationError(false, GoogleMapsManager.locationInfoWindow, GoogleMapsManager.map.getCenter());
     }
   },
 
