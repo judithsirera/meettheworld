@@ -14,9 +14,17 @@ var firebaseManager = {
   init: function () {
     firebase.initializeApp(this.config);
     this.database = firebase.database();
+    this.getData();
   },
 
   getData: function () {
+    return firebase.database().ref('users').child('jsirera').once('value').then(function(snapshot) {
+      $( Object.keys(snapshot.val()) ).each(function (index, value) {
+        var coord = snapshot.val()[value].coord;
+        var name = snapshot.val()[value].name;
 
+        GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, name);
+      })
+    });
   }
 }
