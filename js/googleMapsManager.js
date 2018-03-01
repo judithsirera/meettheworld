@@ -49,7 +49,6 @@ var GoogleMapsManager = {
   },
 
   addMarker: function (position, locationID) {
-    console.log(locationID);
     var marker = new google.maps.Marker({
       position: position,
       map: this.map,
@@ -69,7 +68,6 @@ var GoogleMapsManager = {
 
       var locationData = data[marker.getTitle()];
       var numOfPosts = Object.keys(locationData.posts).length;
-      console.log(locationData);
 
       //MARKER
       GoogleMapsManager.markerInfoWindow.setContent('<h6 class="markerTitle">' + locationData.name + '</h6>' +

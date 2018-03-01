@@ -13,7 +13,6 @@ var card = {
   jqueryClassFormat: ".displayImages",
 
   createCard: function (post) {
-    console.log(post.image);
     var content = '<div class="col s6">' +
                     '<div class="card">' +
                       '<div class="card-image">' +
