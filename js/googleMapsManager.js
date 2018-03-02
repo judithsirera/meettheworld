@@ -31,7 +31,7 @@ var GoogleMapsManager = {
   },
 
   addMarkerInfoWindowListener: function () {
-    google.maps.event.addListener(this.markerInfoWindow,'closeclick',function(){
+    google.maps.event.addListener(GoogleMapsManager.markerInfoWindow,'closeclick',function(){
       card.addInstructions();
     });
   }
