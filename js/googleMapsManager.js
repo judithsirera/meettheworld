@@ -16,7 +16,7 @@ var GoogleMapsManager = {
   init: function () {
 
     this.markerStyle = {
-      url: '"img/icon_location.png"',
+      url: "img/icon_location.png",
       size: new google.maps.Size(20, 32)
     };
 
