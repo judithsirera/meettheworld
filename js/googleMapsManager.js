@@ -34,7 +34,7 @@ var GoogleMapsManager = {
     google.maps.event.addListener(GoogleMapsManager.markerInfoWindow,'closeclick',function(){
       card.addInstructions();
     });
-  }
+  },
 
   findUserLocation: function () {
     if (navigator.geolocation) {
