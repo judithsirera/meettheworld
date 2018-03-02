@@ -112,10 +112,8 @@ var GoogleMapsManager = {
 
       //WEBSITE
       $( card.jqueryClassFormat ).empty();
-      console.log(locationData);
       $( Object.keys(locationData.posts) ).each(function (index, value) {
-        console.log(Object.keys(value)[0], value);
-        var newCard = card.createCard(value, value[Object.keys(value)]);
+        var newCard = card.createCard(value, locationData.posts[value]);
         $( card.jqueryClassFormat ).append(newCard);
         $('.materialboxed').materialbox();
       })
