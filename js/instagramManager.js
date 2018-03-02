@@ -21,7 +21,7 @@ var instagramManager = {
         var resp = JSON.parse(xhr.responseText);
         instagramManager.username = resp.data.username;
         localStorage.setItem(instagramManager._USERNAME, resp.data.username);
-
+        instagramManager.setUsernameProfileOnHTML();
         firebaseManager.getData();
       }
 
@@ -33,6 +33,7 @@ var instagramManager = {
     if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
+      this.setUsernameProfileOnHTML();
       firebaseManager.getData();
     } else if (localStorage.getItem(this._TOKEN)){
       this.token = localStorage.getItem(this._TOKEN);
@@ -43,6 +44,10 @@ var instagramManager = {
     }
 
   },
+
+  setUsernameProfileOnHTML: function () {
+    $( '.username' ).html(this.username);
+  }
 
   addLogoutListener: function () {
     $( ".logout" ).click(function () {

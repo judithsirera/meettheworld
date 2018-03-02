@@ -1,10 +1,10 @@
 
 var data = {};
-firebaseManager.init();
-instagramManager.userAuthentication();
 
 $( document ).ready(function () {
-  instagramManager.addLogoutListener();
+  firebaseManager.init();
+  instagramManager.userAuthentication();
+  //instagramManager.addLogoutListener();
 
 });
 
@@ -37,7 +37,7 @@ var card = {
     $(col).remove();
 
     if ($(card.jqueryClassFormat)[0].childElementCount == 0) {
-      $(".noPlaceSelected").css("display", "block");
+      $( card.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">No place selected</h5>');
       GoogleMapsManager.markerInfoWindow.close();
       GoogleMapsManager.deleteSelectedMarker();
     } else {
