@@ -28,6 +28,18 @@ var card = {
     return content;
   },
 
+  addInstructions: function () {
+    $( this.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">Are you new?</h5>' +
+    '<h4 class="center counter gray-color ">#1</h4>' +
+    '<p class="center gray-color ">Download AWayToTravel chrome extension by clicking <a href="#">here</a> </p>' +
+    '<h4 class="center counter gray-color ">#2</h4>' +
+    '<p class="center gray-color ">Go to <a target="_blank" href="https://www.instagram.com">Instagram</a></p>' +
+    '<p class="center gray-color ">Start adding your favorite pics to the map by clicking on <img src="img/icon_add.png" width="19" alt=""> </p>' +
+    '<h4 class="center counter gray-color ">#3</h4>' +
+    '<p class="center gray-color ">Visualize where they have been taken</p>' +
+    '<p class="center gray-color ">Click on <img src="img/icon_location.png" width="19" alt=""> to see details and photos</p>');
+  }
+
   deleteButtonHandler: function (event) {
     var locationID = GoogleMapsManager.markerSelected.getTitle();
 
@@ -39,15 +51,7 @@ var card = {
     $(col).remove();
 
     if ($(card.jqueryClassFormat)[0].childElementCount == 0) {
-      $( card.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">Are you new?</h5>' +
-      '<h4 class="center counter gray-color ">#1</h4>' +
-      '<p class="center gray-color ">Download AWayToTravel chrome extension by clicking <a href="#">here</a> </p>' +
-      '<h4 class="center counter gray-color ">#2</h4>' +
-      '<p class="center gray-color ">Go to <a target="_blank" href="https://www.instagram.com">Instagram</a></p>' +
-      '<p class="center gray-color ">Start adding your favorite pics to the map by clicking on <img src="img/icon_add.png" width="19" alt=""> </p>' +
-      '<h4 class="center counter gray-color ">#3</h4>' +
-      '<p class="center gray-color ">Visualize where they have been taken</p>' +
-      '<p class="center gray-color ">Click on <img src="img/icon_location.png" width="19" alt=""> to see details and photos</p>');
+      card.addInstructions();
       GoogleMapsManager.markerInfoWindow.close();
       GoogleMapsManager.deleteSelectedMarker();
     } else {

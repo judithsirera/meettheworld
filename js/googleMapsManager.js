@@ -25,9 +25,16 @@ var GoogleMapsManager = {
     this.locationInfoWindow = new google.maps.InfoWindow({map: this.map});
     this.markerInfoWindow = new google.maps.InfoWindow({content: ""});
 
+    this.addMarkerInfoWindowListener();
     this.findUserLocation();
 
   },
+
+  addMarkerInfoWindowListener: function () {
+    google.maps.event.addListener(this.markerInfoWindow,'closeclick',function(){
+      card.addInstructions();
+    });
+  }
 
   findUserLocation: function () {
     if (navigator.geolocation) {
