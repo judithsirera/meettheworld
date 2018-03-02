@@ -20,7 +20,7 @@ var instagramManager = {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         instagramManager.username = resp.data.username;
-        localStorage.setItem(instagramManager._USERNAME, instagramManager.username);
+        localStorage.setItem(instagramManager._USERNAME, resp.data.username);
 
         firebaseManager.getData();
       }
@@ -33,19 +33,20 @@ var instagramManager = {
     if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
-      this.addLogoutListener();
+      firebaseManager.getData();
     } else if (localStorage.getItem(this._TOKEN)){
       this.token = localStorage.getItem(this._TOKEN);
       this.requestCurrentUser();
-      this.addLogoutListener();
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
       window.location.replace(url);
     }
+
   },
 
   addLogoutListener: function () {
     $( ".logout" ).click(function () {
+      console.log("hola");
       localStorage.removeItem(instagramManager._TOKEN);
       localStorage.removeItem(instagramManager._USERNAME);
       window.location.reload();
