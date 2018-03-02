@@ -1,6 +1,7 @@
 
 var data = {};
-instagramManager.requestCurrentUser()
+instagramManager.userAuthentication();
+instagramManager.requestCurrentUser();
 
 $( document ).ready(function () {
 
