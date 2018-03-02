@@ -58,8 +58,7 @@ html, body {
 }
 
 .displayImages {
-  margin-top: 1em;
-  margin-bottom: 3em !important;
+  margin: 0px !important;
   overflow-y: scroll;
 }
 
