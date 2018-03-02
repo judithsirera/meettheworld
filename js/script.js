@@ -1,9 +1,9 @@
 
 var data = {};
+firebaseManager.init();
 instagramManager.userAuthentication();
 
 $( document ).ready(function () {
-  firebaseManager.init();
   instagramManager.addLogoutListener();
 
 });
