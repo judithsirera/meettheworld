@@ -19,7 +19,6 @@ var instagramManager = {
       if (xhr.readyState == 4) {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
-        console.log(resp);
         instagramManager.username = resp.data.username;
         localStorage.setItem(instagramManager._USERNAME, resp.data.username);
         instagramManager.setUsernameProfileOnHTML();
