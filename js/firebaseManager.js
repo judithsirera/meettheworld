@@ -14,11 +14,9 @@ var firebaseManager = {
   init: function () {
     firebase.initializeApp(this.config);
     this.database = firebase.database();
-    this.getData();
   },
 
   getData: function () {
-    console.log("username: " + instagramManager.username);
     return firebase.database().ref('users').child(instagramManager.username).once('value').then(function(snapshot) {
       data = snapshot.val();
       $( Object.keys(snapshot.val()) ).each(function (index, value) {
