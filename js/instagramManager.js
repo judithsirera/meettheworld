@@ -21,15 +21,15 @@ var instagramManager = {
         var resp = JSON.parse(xhr.responseText);
         this.username = resp.data.username;
         localStorage.setItem(this._USERNAME, this.username);
-        console.log(this.username);
+
+        firebaseManager.getData();
       }
+
     }
     xhr.send();
   },
 
   userAuthentication: function () {
-    console.log(localStorage.getItem(this._USERNAME));
-    console.log(localStorage.getItem(this._TOKEN));
     if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
