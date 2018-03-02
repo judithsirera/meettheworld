@@ -28,13 +28,15 @@ var instagramManager = {
   },
 
   userAuthentication: function () {
-    if (localStorage.getItem(this._TOKEN)) {
+    if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
+    } else if (localStorage.getItem(this._TOKEN)){
+      this.token = localStorage.getItem(this._TOKEN);
+      this.requestCurrentUser();
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
       window.location.replace(url);
-      this.requestCurrentUser();
     }
   }
 }
