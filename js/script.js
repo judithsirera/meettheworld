@@ -6,6 +6,9 @@ $( document ).ready(function () {
   instagramManager.userAuthentication();
   //instagramManager.addLogoutListener();
 
+  var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
+  $(".displayImages").css("height", displayImagesHeight);
+
 });
 
 
