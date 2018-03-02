@@ -10,9 +10,15 @@ var GoogleMapsManager = {
   markerSelected: {},
   markerInfoWindow: {},
   markerClusterer: {},
+  markerStyle: {},
   locationInfoWindow: {},
 
   init: function () {
+
+    this.markerStyle = {
+      url: '"img/icon_location.png"',
+      size: new google.maps.Size(20, 32)
+    };
 
     this.initMap();
 
@@ -55,12 +61,13 @@ var GoogleMapsManager = {
   },
 
   addMarker: function (position, locationID) {
+
     var marker = new google.maps.Marker({
       position: position,
       map: this.map,
       animation: google.maps.Animation.DROP,
       title: locationID,
-      icon: "img/icon_location.png"
+      icon: this.markerStyle
     });
     this.markerClickListener(marker);
     this.markers.push(marker);

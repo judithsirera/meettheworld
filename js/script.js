@@ -14,7 +14,7 @@ var card = {
   jqueryDeleteBtnClassFormat: ".card-delete",
 
   createCard: function (postId, post) {
-    var content = '<div class="col s4">' +
+    var content = '<div class="col s6">' +
                     '<div class="card">' +
                       '<div class="card-image">' +
                         '<img class="materialboxed" width="650" src=' + post.image + '>' +
