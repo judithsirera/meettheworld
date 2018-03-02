@@ -1,11 +1,10 @@
 
 var data = {};
 instagramManager.userAuthentication();
-instagramManager.requestCurrentUser();
 
 $( document ).ready(function () {
 
-  firebaseManager.init();
+  //firebaseManager.init();
 
 });
 

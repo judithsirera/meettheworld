@@ -1,11 +1,14 @@
 var instagramManager = {
-  username: 'jsirera',
+  _TOKEN: 'instatravel_token',
+  _USERNAME: 'instatravel_username',
 
-  token: '227452265.37ef44c.6aa376f9648144fe8d6f7caf06a92b90',
+  username: '',
+  token: '',
+
+
   client_id: '37ef44c599b5494480e90749c720eb7f',
-  redirect_uri: 'https://github.com/judsirera/instatravel',
+  redirect_uri: 'https://judsirera.github.io/instatravel/login/',
   requestApi: 'https://api.instagram.com/v1/users/self/?access_token=',
-  requestToken: "",
   type: "GET",
 
   requestCurrentUser: function () {
@@ -17,17 +20,37 @@ var instagramManager = {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         this.username = resp.data.username;
+        console.log(this.username);
       }
     }
     xhr.send();
   },
 
   userAuthentication: function () {
-
     var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
+
     window.location.replace(url);
 
-    //TODO url fragment.
+    
+    if (localStorage.getItem(this._TOKEN)) {
+      this.username = localStorage.getItem(this._USERNAME);
+      this.token = localStorage.getItem(this._TOKEN);
+      console.log(localStorage.getItem(this._TOKEN));
+    } else {
+      var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
 
+      window.location.replace(url);
+    }
+    // } else {
+    //   var windowURL = window.location.href;
+    //   console.log(windowURL);
+    //   if (windowURL.split('#').length <= 1) {
+    //     var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
+    //     window.location.replace(url);
+    //   }else {
+    //     this.token = windowURL.split('#')[1];
+    //     this.requestCurrentUser();
+    //   }
+    //}
   }
 }
