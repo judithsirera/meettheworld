@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="../js/instagramManager.js" charset="utf-8"></script>
   </head>
   <body>
     <script type="text/javascript">
       var newURL = window.location.href;
       var token = newURL.split('=')[1];
-      localStorage.setItem('instatravel_token', token);
+      localStorage.setItem(instagramManager._TOKEN, token);
       window.location.replace(newURL.split('login')[0]);
     </script>
   </body>
