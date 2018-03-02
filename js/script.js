@@ -3,7 +3,7 @@ var data = {};
 instagramManager.userAuthentication();
 
 $( document ).ready(function () {
-  
+  instagramManager.username = 'jsirera';
   firebaseManager.init();
 
 });

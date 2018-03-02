@@ -59,7 +59,8 @@ var GoogleMapsManager = {
       position: position,
       map: this.map,
       animation: google.maps.Animation.DROP,
-      title: locationID
+      title: locationID,
+      icon: "img/icon_location.png"
     });
     this.markerClickListener(marker);
     this.markers.push(marker);
