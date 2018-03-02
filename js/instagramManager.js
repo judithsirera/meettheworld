@@ -1,13 +1,13 @@
 var instagramManager = {
-  _TOKEN: "awaytotravel_token",
-  _USERNAME: "awaytotravel_username",
+  _TOKEN: "meettheworld_token",
+  _USERNAME: "meettheworld_username",
 
   username: "",
   token: "",
 
 
   client_id: "37ef44c599b5494480e90749c720eb7f",
-  redirect_uri: 'https://judsirera.github.io/awaytotravel/login/',
+  redirect_uri: 'https://judsirera.github.io/meettheworld/login/',
   requestApi: 'https://api.instagram.com/v1/users/self/?access_token=',
   type: "GET",
 
