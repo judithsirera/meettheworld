@@ -1,6 +1,6 @@
 var instagramManager = {
-  _TOKEN: "instatravel_token",
-  _USERNAME: "instatravel_username",
+  _TOKEN: "awaytotravel_token",
+  _USERNAME: "awaytotravel_username",
 
   username: "",
   token: "",
