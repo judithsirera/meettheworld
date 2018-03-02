@@ -104,7 +104,7 @@ var GoogleMapsManager = {
       GoogleMapsManager.markerInfoWindow.open(this.map, marker);
 
       //WEBSITE
-      $( card.jqueryClassFormat ).empty();
+      $(".noPlaceSelected").css("display", "none");
       $( locationData.posts ).each(function (index, value) {
         var newCard = card.createCard(Object.keys(value)[0], value[Object.keys(value)]);
         $( card.jqueryClassFormat ).append(newCard);

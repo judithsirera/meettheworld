@@ -33,12 +33,10 @@ var card = {
     var cardImage = $($(cardDelete)[0].parentNode)[0];
     var card_ = $($(cardImage)[0].parentNode)[0];
     var col = $($(card_)[0].parentNode)[0];
-    console.log(col);
     $(col).remove();
 
-    console.log($(card.jqueryClassFormat)[0].childElementCount);
     if ($(card.jqueryClassFormat)[0].childElementCount == 0) {
-      $(card.jqueryClassFormat).html('<h5 class="center noPlaceSelected">No place selected</h5>');
+      $(".noPlaceSelected").css("display", "block");
       GoogleMapsManager.markerInfoWindow.close();
       GoogleMapsManager.deleteSelectedMarker();
     } else {
