@@ -32,9 +32,9 @@ var firebaseManager = {
 
   deletePost: function(locationID, postID) {
     if (data[locationID].posts[postID] && Object.keys(data[locationID].posts).length <= 1) {
-      this.database.ref('users').child(this.username).child(locationID).remove();
+      this.database.ref('users').child(instagramManager.username).child(locationID).remove();
     } else {
-      this.database.ref('users').child(this.username).child(locationID).child('posts').child(postID).remove();
+      this.database.ref('users').child(instagramManager.username).child(locationID).child('posts').child(postID).remove();
     }
   }
 }
