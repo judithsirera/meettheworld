@@ -7,7 +7,7 @@ var instagramManager = {
 
 
   client_id: "37ef44c599b5494480e90749c720eb7f",
-  redirect_uri: 'https://judsirera.github.io/instatravel/login/',
+  redirect_uri: 'https://judsirera.github.io/awaytotravel/login/',
   requestApi: 'https://api.instagram.com/v1/users/self/?access_token=',
   type: "GET",
 
