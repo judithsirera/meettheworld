@@ -38,7 +38,7 @@ var card = {
     '<h4 class="center counter gray-color ">#3</h4>' +
     '<p class="center gray-color ">Visualize where they have been taken</p>' +
     '<p class="center gray-color ">Click on <img src="img/icon_location.png" width="19" alt=""> to see details and photos</p>');
-  }
+  },
 
   deleteButtonHandler: function (event) {
     var locationID = GoogleMapsManager.markerSelected.getTitle();
