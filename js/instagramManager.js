@@ -28,6 +28,8 @@ var instagramManager = {
   },
 
   userAuthentication: function () {
+    console.log(localStorage.getItem(this._USERNAME));
+    console.log(localStorage.getItem(this._TOKEN));
     if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
