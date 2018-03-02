@@ -116,8 +116,10 @@ var GoogleMapsManager = {
   },
 
   setMarkerInfoWindowContent: function(name, numOfPosts) {
+    var pic = numOfPosts == 1 ? "picture" : "pictures";
+
     this.markerInfoWindow.setContent('<h6 class="markerTitle">' + name + '</h6>' +
-                                    '<h8 class="markerCount">' + numOfPosts + ' picture(s) </h8>');
+                                    '<h8 class="markerCount">' + numOfPosts + ' ' + pic + '</h8>');
 
   },
 
