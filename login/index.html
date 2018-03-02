@@ -8,12 +8,9 @@
     login
     <script type="text/javascript">
       var newURL = window.location.href;
-      console.log(newURL);
       var token = newURL.split('=')[1];
-
       localStorage.setItem('instatravel_token', token);
-      console.log(token);
-      //window.location.replace(newURL.split('#')[0]);
+      window.location.replace(newURL.split('login')[0]);
     </script>
   </body>
 </html>

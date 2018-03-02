@@ -20,6 +20,7 @@ var instagramManager = {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         this.username = resp.data.username;
+        localStorage.setItem(this._USERNAME, this.username);
         console.log(this.username);
       }
     }
@@ -27,30 +28,13 @@ var instagramManager = {
   },
 
   userAuthentication: function () {
-    var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
-
-    window.location.replace(url);
-
-    
     if (localStorage.getItem(this._TOKEN)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
-      console.log(localStorage.getItem(this._TOKEN));
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
-
       window.location.replace(url);
+      this.requestCurrentUser();
     }
-    // } else {
-    //   var windowURL = window.location.href;
-    //   console.log(windowURL);
-    //   if (windowURL.split('#').length <= 1) {
-    //     var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
-    //     window.location.replace(url);
-    //   }else {
-    //     this.token = windowURL.split('#')[1];
-    //     this.requestCurrentUser();
-    //   }
-    //}
   }
 }
