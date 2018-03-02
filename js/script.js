@@ -3,8 +3,7 @@ var data = {};
 
 $( document ).ready(function () {
   firebaseManager.init();
-  //instagramManager.userAuthentication();
-  //instagramManager.addLogoutListener();
+  instagramManager.userAuthentication();
 
   var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
   $(".displayImages").css("height", displayImagesHeight);
