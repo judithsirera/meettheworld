@@ -42,7 +42,7 @@ var instagramManager = {
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
       console.log(url);
-      //window.location.replace(url);
+      window.location.replace(url);
     }
 
   },
