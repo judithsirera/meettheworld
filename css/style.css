@@ -103,8 +103,8 @@ html, body {
 
 .username{
   position: absolute;
-  top: 1.5em;
-  right: 5px;
+  top: 0.1em;
+  right: 0px;
   height: 1.8em;
   color: #1ea6c8;
 }
