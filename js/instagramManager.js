@@ -48,13 +48,4 @@ var instagramManager = {
   setUsernameProfileOnHTML: function () {
     $( '.username' ).html(this.username);
   }
-
-  addLogoutListener: function () {
-    $( ".logout" ).click(function () {
-      console.log("hola");
-      localStorage.removeItem(instagramManager._TOKEN);
-      localStorage.removeItem(instagramManager._USERNAME);
-      window.location.reload();
-    })
-  }
 }

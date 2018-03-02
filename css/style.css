@@ -101,11 +101,12 @@ html, body {
   padding: 0.1em;
 }
 
-.logout, .username{
+.username{
   position: absolute;
   top: 1.5em;
   right: 5px;
   height: 1.8em;
+  color: #1ea6c8;
 }
 
 .username::before {
