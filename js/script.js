@@ -3,7 +3,7 @@ var data = {};
 
 $( document ).ready(function () {
   firebaseManager.init();
-  instagramManager.userAuthentication();
+  //instagramManager.userAuthentication();
   //instagramManager.addLogoutListener();
 
   var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
@@ -40,7 +40,14 @@ var card = {
     $(col).remove();
 
     if ($(card.jqueryClassFormat)[0].childElementCount == 0) {
-      $( card.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">No place selected</h5>');
+      $( card.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">Are you new?</h5>' +
+      '<h4 class="center counter gray-color ">#1</h4>' +
+      '<p class="center gray-color ">Download InstaTravel chrome extension by clicking <a href="#">here</a> </p>' +
+      '<h4 class="center counter gray-color ">#2</h4>' +
+      '<p class="center gray-color ">Add your favorite pics to the map clicking on this icon <img src="img/icon_19.png" width="19" alt=""> </p>' +
+      '<h4 class="center counter gray-color ">#3</h4>' +
+      '<p class="center gray-color ">Visualize where have they been taken</p>' +
+      '<p class="center gray-color ">Click on <img src="img/icon_location.png" width="19" alt=""> to see details and photos</p>');
       GoogleMapsManager.markerInfoWindow.close();
       GoogleMapsManager.deleteSelectedMarker();
     } else {
