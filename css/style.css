@@ -70,6 +70,9 @@ html, body {
   color: #C0C0C0;
 }
 
+.card .card-title {
+  padding: 15px !important;
+}
 .card .card-delete:hover {
   cursor: pointer;
 }
@@ -79,7 +82,7 @@ html, body {
   bottom: 0;
   right: 0;
   max-width: 100%;
-  padding: 24px;
+  padding: 15px;
 
 }
 
@@ -98,4 +101,13 @@ html, body {
   padding: 0.1em;
 }
 
+.logout{
+  position: absolute;
+  top: 1.5em;
+  right: 5px;
+  height: 1.8em;
+}
+
+.logout:hover {
+  cursor: pointer;
 }
