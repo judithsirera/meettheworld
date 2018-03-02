@@ -20,7 +20,7 @@ var instagramManager = {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         instagramManager.username = resp.data.username;
-        localStorage.setItem(this._USERNAME, instagramManager.username);
+        localStorage.setItem(instagramManager._USERNAME, instagramManager.username);
 
         firebaseManager.getData();
       }
@@ -48,7 +48,7 @@ var instagramManager = {
     $( ".logout" ).click(function () {
       localStorage.removeItem(instagramManager._TOKEN);
       localStorage.removeItem(instagramManager._USERNAME);
-      window.location.replace(window.location.href);
+      window.location.reload();
     })
   }
 }
