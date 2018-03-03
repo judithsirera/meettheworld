@@ -26,6 +26,7 @@ var firebaseManager = {
             GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
         }
       })
+      card.addInstructions();
       //GoogleMapsManager.createMarkerClusterer();
     });
   },
