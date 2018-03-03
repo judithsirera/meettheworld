@@ -203,6 +203,11 @@ p{
       padding-bottom: 20px;
     }
 
+    .card-title,
+    .card-delete .material-icons{
+      font-size: 15px !important;
+    }
+
 
 
 }

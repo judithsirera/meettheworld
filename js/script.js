@@ -5,9 +5,10 @@ $( document ).ready(function () {
     firebaseManager.init();
     instagramManager.userAuthentication();
 
-
+  if (window.innerWidth >= 992) {
     var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
     $(".displayImages").css("height", displayImagesHeight);
+  }
 
 });
 
