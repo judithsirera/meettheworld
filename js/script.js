@@ -2,14 +2,12 @@
 var data = {};
 
 $( document ).ready(function () {
-  if (window.innerWidth >= 992) {
     firebaseManager.init();
     instagramManager.userAuthentication();
 
 
     var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
     $(".displayImages").css("height", displayImagesHeight);
-  }
 
 });
 
@@ -40,9 +38,9 @@ var card = {
       })
 
       $( this.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">This is what you have collected already</h5>' +
-      '<p style="margin-top: 2em;" class="center gray-color"><i class="small material-icons">location_on</i></p>' +
+      '<p class="center gray-color margin-top-dataRight"><i class="small material-icons">location_on</i></p>' +
       '<p class="center gray-color">' + l + '</p>' +
-      '<p style="margin-top: 1.5em;" class="center gray-color"><i class="small material-icons">camera_alt</i></p>' +
+      '<p class="center gray-color margin-top-dataRight"><i class="small material-icons">camera_alt</i></p>' +
       '<p class="center gray-color">' + p + '</p>')
     } else {
         $( this.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">Are you new?</h5>' +
