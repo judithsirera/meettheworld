@@ -20,9 +20,10 @@ var instagramManager = {
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         instagramManager.username = resp.data.username;
-        localStorage.setItem(instagramManager._USERNAME, resp.data.username);
+        //localStorage.setItem(instagramManager._USERNAME, resp.data.username);
         instagramManager.setUsernameProfileOnHTML();
         firebaseManager.getData();
+        localStorage.removeItem(instagramManager._TOKEN);
       }
 
     }
@@ -30,12 +31,13 @@ var instagramManager = {
   },
 
   userAuthentication: function () {
-    if (localStorage.getItem(this._USERNAME)) {
+    /*if (localStorage.getItem(this._USERNAME)) {
       this.username = localStorage.getItem(this._USERNAME);
       this.token = localStorage.getItem(this._TOKEN);
       this.setUsernameProfileOnHTML();
       firebaseManager.getData();
-    } else if (localStorage.getItem(this._TOKEN)){
+    } else*/
+    if (localStorage.getItem(this._TOKEN)){
       this.token = localStorage.getItem(this._TOKEN);
       this.requestCurrentUser();
     } else {
