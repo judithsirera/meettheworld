@@ -2,11 +2,13 @@
 var data = {};
 
 $( document ).ready(function () {
-  firebaseManager.init();
-  instagramManager.userAuthentication();
+  if (window.innerWidth >= 992) {
+    firebaseManager.init();
+    instagramManager.userAuthentication();
 
-  var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
-  $(".displayImages").css("height", displayImagesHeight);
+    var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
+    $(".displayImages").css("height", displayImagesHeight);
+  }
 
 });
 
