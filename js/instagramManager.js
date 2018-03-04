@@ -17,6 +17,7 @@ var instagramManager = {
     xhr.open(this.type, this.requestApi + this.token)
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
+
         // JSON.parse does not evaluate the attacker's scripts.
         var resp = JSON.parse(xhr.responseText);
         instagramManager.username = resp.data.username;
@@ -25,6 +26,7 @@ var instagramManager = {
         firebaseManager.setFirebaseUsername(instagramManager.username);
         firebaseManager.getData();
         localStorage.removeItem(instagramManager._TOKEN);
+        $( "#preLogin" ).css("display", "none");
       }
 
     }
@@ -43,7 +45,7 @@ var instagramManager = {
       this.requestCurrentUser();
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
-      console.log(url);
+
       window.location.replace(url);
     }
 
