@@ -22,6 +22,7 @@ var instagramManager = {
         instagramManager.username = resp.data.username;
         //localStorage.setItem(instagramManager._USERNAME, resp.data.username);
         instagramManager.setUsernameProfileOnHTML();
+        firebaseManager.setFirebaseUsername(instagramManager.username);
         firebaseManager.getData();
         localStorage.removeItem(instagramManager._TOKEN);
       }
