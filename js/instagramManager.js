@@ -41,11 +41,11 @@ var instagramManager = {
       firebaseManager.getData();
     } else*/
     if (localStorage.getItem(this._TOKEN)){
+      $( "#welcome" ).css("display", "none");
       this.token = localStorage.getItem(this._TOKEN);
       this.requestCurrentUser();
     } else {
       var url = "https://api.instagram.com/oauth/authorize/?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_uri + "&response_type=token";
-
       window.location.replace(url);
     }
 
