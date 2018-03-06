@@ -90,14 +90,18 @@ html, body {
 .card .card-delete:hover {
   cursor: pointer;
 }
-.card .card-delete {
+.card .card-delete,
+.card .card-open {
   color: white;
   position: absolute;
   bottom: 0;
   right: 0;
   max-width: 100%;
   padding: 15px;
+}
 
+.card .card-open {
+  top: 0;
 }
 
 .link-to-website{
@@ -215,7 +219,8 @@ p{
     }
 
     .card-title,
-    .card-delete .material-icons{
+    .card-delete .material-icons,
+    .card-open .material-icons{
       font-size: 15px !important;
     }
 

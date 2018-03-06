@@ -3,7 +3,10 @@ var data = {};
 
 $( document ).ready(function () {
     firebaseManager.init();
-    instagramManager.userAuthentication();
+    //instagramManager.userAuthentication();
+    var newCard = card.createCard('Bf9X0O4hT2X', {image:'https://scontent-iad3-1.cdninstagram.com/vp/b5ea37353ae08bc5bf5aef9ae735096f/5B3D6EA3/t51.2885-15/e35/28435424_467622866973983_5312725771779833856_n.jpg', photographer: 'a'});
+    $( card.jqueryClassFormat ).append(newCard);
+    $('.materialboxed').materialbox();
 
   if (window.innerWidth >= 992) {
     var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
@@ -24,6 +27,7 @@ var card = {
                         '<img class="materialboxed" width="650" src=' + post.image + '>' +
                         '<span class="card-title">@' + post.photographer + '</span>' +
                         '<span id=' + postId + ' class="card-delete"> <i class="material-icons">delete</i> </span>' +
+                        '<a class="card-open" target="_blank" href="https://www.instagram.com/p/' + postId +'"><i class="material-icons">launch</i></a>' +
                       '</div>' +
                     '</div>' +
                   '</div>';
