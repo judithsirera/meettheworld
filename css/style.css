@@ -59,6 +59,7 @@ html, body {
 .title-with-margins {
   margin: 0.1em;
   margin-left: 0.5em;
+  display: none;
 }
 
 .title-span {
@@ -151,13 +152,6 @@ p{
 
 #onlyPhone {
   display: none;
-  /* position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: white;
-  z-index: 1; */
 }
 
 @media only screen and (max-width: 992px) {
@@ -224,6 +218,34 @@ p{
       font-size: 15px !important;
     }
 
+}
 
+.logo-img {
+  height: 20px !important;
+  width: auto !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 5px !important;
+}
 
+.link-to-website {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+
+.username {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.header img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
