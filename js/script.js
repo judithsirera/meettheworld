@@ -6,7 +6,7 @@ $( document ).ready(function () {
     instagramManager.userAuthentication();
 
   if (window.innerWidth >= 992) {
-    var displayImagesHeight = window.innerHeight - $(".header").innerHeight();
+    var displayImagesHeight = window.innerHeight - $($(".header")[1]).innerHeight();
     $(".displayImages").css("height", displayImagesHeight);
   }
 
