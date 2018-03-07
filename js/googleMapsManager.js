@@ -71,7 +71,7 @@ var GoogleMapsManager = {
     var marker = new google.maps.Marker({
       position: position,
       map: this.map,
-      animation: google.maps.Animation.DROP,
+      //animation: google.maps.Animation.DROP,
       title: locationID,
       icon: this.markerStyle
     });
@@ -88,7 +88,16 @@ var GoogleMapsManager = {
     this.markerSelected = {};
 
     //this.createMarkerClusterer();
+  },
 
+  deleteAllMarkers: function () {
+    if (Object.keys(this.markerSelected).length > 0) {
+      this.deleteSelectedMarker();
+    }
+    this.markers.forEach(function (element, index) {
+      GoogleMapsManager.markers[index].setMap(null);
+      GoogleMapsManager.markers.splice(index, 1);
+    })
   },
 
   createMarkerClusterer: function () {

@@ -22,16 +22,31 @@ var firebaseManager = {
   },
 
   getData: function () {
-    return firebase.database().ref('users').child(this.firebaseUsername).once('value').then(function(snapshot) {
+    return firebase.database().ref('users').child(this.firebaseUsername).on('value', function(snapshot) {
+
+      var dataLength = 0;
+      if(data) {
+        dataLength = Object.keys(data).length;
+      }
+      GoogleMapsManager.deleteAllMarkers();
       data = snapshot.val();
-      $( Object.keys(snapshot.val()) ).each(function (index, value) {
-        var coord = snapshot.val()[value].coord;
-        var id = value;
-        if (snapshot.val()[value].posts && Object.keys(snapshot.val()[value].posts).length > 0) {
-            GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
+
+      if ( snapshot.val() ) {
+        if (Object.keys(snapshot.val()).length > dataLength && !firstLoaded) {
+          Materialize.toast('New photo', 3000, 'rounded');
         }
-      })
+
+        $( Object.keys(snapshot.val()) ).each(function (index, value) {
+          var coord = snapshot.val()[value].coord;
+          var id = value;
+          if (snapshot.val()[value].posts && Object.keys(snapshot.val()[value].posts).length > 0) {
+            GoogleMapsManager.addMarker({lat: coord.latitude, lng: coord.longitude}, id);
+          }
+        })
+      }
       card.addInstructions();
+
+      firstLoaded = false;
       //GoogleMapsManager.createMarkerClusterer();
     });
   },

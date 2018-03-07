@@ -1,5 +1,6 @@
 
 var data = {};
+var firstLoaded = true;
 
 $( document ).ready(function () {
     firebaseManager.init();
