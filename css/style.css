@@ -24,6 +24,11 @@ html, body {
   font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
+.toast-container {
+  bottom: 10%;
+  top: auto;
+}
+
 .rightPanel {
   width: 40%;
   position: absolute;

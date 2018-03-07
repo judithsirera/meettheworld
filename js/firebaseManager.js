@@ -33,7 +33,7 @@ var firebaseManager = {
 
       if ( snapshot.val() ) {
         if (Object.keys(snapshot.val()).length > dataLength && !firstLoaded) {
-          Materialize.toast('New photo', 3000, 'rounded');
+          Materialize.toast('New photo added', 3000, 'rounded');
         }
 
         $( Object.keys(snapshot.val()) ).each(function (index, value) {
