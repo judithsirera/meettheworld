@@ -103,6 +103,7 @@ html, body {
 
 .card .card-open {
   top: 0;
+  bottom: auto;
 }
 
 .link-to-website{
