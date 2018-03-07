@@ -24,9 +24,9 @@ html, body {
   font-family: 'Open Sans Condensed', sans-serif !important;
 }
 
-.toast-container {
-  bottom: 10%;
-  top: auto;
+#toast-container {
+  bottom: 5% !important;
+  top: auto !important;
 }
 
 .rightPanel {
