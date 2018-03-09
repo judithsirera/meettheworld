@@ -48,7 +48,7 @@ var card = {
     } else {
         $( this.jqueryClassFormat ).html('<h5 class="center noPlaceSelected">Are you new?</h5>' +
         '<h4 class="center counter gray-color ">#1</h4>' +
-        '<p class="center gray-color ">Download AWayToTravel chrome extension by clicking <a href="https://chrome.google.com/webstore/detail/meet-the-world/dnjacdhjmipmijabeoocdgaglpbkbkpp">here</a> </p>' +
+        '<p class="center gray-color ">Download Meet The World chrome extension by clicking <a target="_blank" href="https://chrome.google.com/webstore/detail/meet-the-world/dnjacdhjmipmijabeoocdgaglpbkbkpp">here</a> </p>' +
         '<h4 class="center counter gray-color ">#2</h4>' +
         '<p class="center gray-color ">Go to <a target="_blank" href="https://www.instagram.com">Instagram</a></p>' +
         '<p class="center gray-color ">Start adding your favorite pics to the map by clicking on <img src="img/icon_add.png" width="19" alt=""> </p>' +
