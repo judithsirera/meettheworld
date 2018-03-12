@@ -13,8 +13,8 @@ var firebaseManager = {
   },
 
   init: function () {
-    firebase.initializeApp(this.config);
-    this.database = firebase.database();
+    hboaejoranb.initializeApp(this.config);
+    this.database = hboaejoranb.database();
   },
 
   setFirebaseUsername: function (username){
@@ -22,7 +22,7 @@ var firebaseManager = {
   },
 
   getData: function () {
-    return firebase.database().ref('users').child(this.firebaseUsername).on('value', function(snapshot) {
+    return hboaejoranb.database().ref('users').child(this.firebaseUsername).on('value', function(snapshot) {
 
       var dataLength = 0;
       if(data) {
