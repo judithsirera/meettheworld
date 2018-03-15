@@ -21,6 +21,18 @@ Before starting you need to link this app to your firebase app. It has to be the
 ```
 These parameters are given by firebase when you [create a project in their console](https://console.firebase.google.com/)
 
+# Instagram Configuration
+Since the project is using the Instagram API you need to register your application as a [Instagram Developer](https://www.instagram.com/developer/). This application has to be a different one from Meet The World Chrome Extension [docs](https://github.com/judsirera/meettheworld_ChromeExtension), otherwise you won't be allowed to request data in the Chrome Extension. Once your application is registered, write your Client Id in [instagramManajer.js](../blob/master/js/instagramManager.js) where the following lines:
+
+```javascript
+  client_id: YOUR_INSTAGRAM_CLIENT_ID,
+  redirect_uri: 'http://meettheworld.judithsirera.com/login/',
+  requestApi: 'https://api.instagram.com/v1/users/self/?access_token=',
+  type: "GET",
+```
+
+This Instagram app has to be reviewed and approved by Instagram to be used out of Sandbox. Out of Sandbox means to do your app public so everyone can use it log in to Instagram.
+
 # Start
 
 1. Go [here](https://chrome.google.com/webstore/detail/meet-the-world/dnjacdhjmipmijabeoocdgaglpbkbkpp) and install **Meet The World** Chrome extension

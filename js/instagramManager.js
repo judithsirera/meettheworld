@@ -6,7 +6,7 @@ var instagramManager = {
   token: "",
 
 
-  client_id: "37ef44c599b5494480e90749c720eb7f",
+  client_id: YOUR_INSTAGRAM_CLIENT_ID,
   redirect_uri: 'http://meettheworld.judithsirera.com/login/',
   requestApi: 'https://api.instagram.com/v1/users/self/?access_token=',
   type: "GET",
