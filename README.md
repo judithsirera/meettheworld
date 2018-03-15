@@ -19,7 +19,6 @@ Before starting you need to link this app to your firebase app. It has to be the
     messagingSenderId: YOUR_FIREBASE_APP_MESSAGING_SENDER_ID
   }
 ```
-
 These parameters are given by firebase when you [create a project in their console](https://console.firebase.google.com/)
 
 # Start
