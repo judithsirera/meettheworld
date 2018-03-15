@@ -6,7 +6,7 @@
 - [x] Instagram account
 - [x] Meet The World Chrome extension installed
 
-#Firebase Configuration
+# Firebase Configuration
 Before starting you need to link this app to your firebase app. It has to be the same firebase app than Meet The World Chrome Extension [docs](https://github.com/judsirera/meettheworld_ChromeExtension). For that, you just need to write you firebase app configuration parameters where the following code in [firebaseManajer.js](js/firebaseManajer.js):
 
 ```javascript
